@@ -2,7 +2,7 @@ const axios = require("axios");
 
 const options = {
   method: 'POST',
-  url: 'https://text-to-code-ai.p.rapidapi.com/api/text-to-code',
+  url: 'https://text-to-code-ai.p.rapidapi.com/',
   headers: {
     'content-type': 'application/json',
     'X-RapidAPI-Host': 'text-to-code-ai.p.rapidapi.com',
