@@ -8,12 +8,18 @@ const openai = new OpenAIApi(configuration)
 
 export default async (req, res) => {
 
-  const prompt = JSON.parse(req.body).prompt
+  if (req.method !== 'POST') {
+    res.status(400).json({
+      message: "POST to this endpoint",
+    })
+    return
+  } 
+  console.log(req.body)
+  const prompt = req.body.prompt
   console.log(prompt)
   console.log("content length", prompt.length)
   console.log(req.headers)
   
-
   if (prompt.length > 1000) {
     res.status(400).json({
       message: "Please under 1000 characters",
